@@ -15,7 +15,7 @@ export default function configuration(): Config {
       port: +process.env.APP_PORT ?? 3000,
     },
     database: {
-      uri: process.env.DATABASE_URI ?? 'mongodb://localhost:27017/jokes',
+      uri: process.env.DATABASE_URI ?? 'mongodb://db:27017/jokes',
     },
   };
 }
