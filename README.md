@@ -4,7 +4,18 @@
 $ yarn install
 ```
 
+---
+
 ## Running the app
+
+### Docker
+
+```bash
+$ docker compose up -d
+```
+
+
+### Local
 
 ```bash
 # development
@@ -12,10 +23,9 @@ $ yarn run start
 
 # watch mode
 $ yarn run start:dev
-
-# production mode
-$ yarn run start:prod
 ```
+
+---
 
 ## Test
 
@@ -26,6 +36,8 @@ $ yarn run test
 # test coverage
 $ yarn run test:cov
 ```
+
+---
 
 ## Resources
 
