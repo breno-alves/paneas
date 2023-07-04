@@ -1,0 +1,32 @@
+version: '3.4'
+
+services:
+  app:
+    container_name: paneas_app
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: dev
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./:/usr/src/app
+    networks:
+      - app_net
+
+  db:
+    container_name: paneas_db
+    image: mongo:4
+    volumes:
+      - mongo:/data/db
+    ports:
+      - '27017:27017'
+    networks:
+      - app_net
+
+networks:
+  app_net:
+    driver: bridge
+
+volumes:
+  mongo:
