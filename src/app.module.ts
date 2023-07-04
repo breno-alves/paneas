@@ -14,7 +14,7 @@ import configuration from './shared/config/app.config';
       inject: [ConfigService],
       useFactory: (configService: ConfigService) => {
         return {
-          uri: configService.get<string>('MONGO_URI'),
+          uri: configService.get<string>('database.uri'),
         };
       },
     }),

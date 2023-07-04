@@ -6,6 +6,11 @@ interface Config {
   database: {
     uri: string;
   };
+  integrations: {
+    jokeApi: {
+      url: string;
+    };
+  };
 }
 
 export default function configuration(): Config {
@@ -16,6 +21,11 @@ export default function configuration(): Config {
     },
     database: {
       uri: process.env.DATABASE_URI ?? 'mongodb://db:27017/jokes',
+    },
+    integrations: {
+      jokeApi: {
+        url: process.env.JOKES_API_URL ?? 'https://v2.jokeapi.dev/joke/any',
+      },
     },
   };
 }

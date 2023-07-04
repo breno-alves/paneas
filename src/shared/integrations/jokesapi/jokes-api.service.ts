@@ -13,7 +13,9 @@ export default class JokesApiService implements IJokesAPI {
 
   getJoke() {
     return this.httpService
-      .get<JokeResponse>(this.configService.get<string>('JOKES_API_URL'))
+      .get<JokeResponse>(
+        this.configService.get<string>('integrations.jokeApi.url'),
+      )
       .pipe(map((response) => response.data));
   }
 }
